@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Existing Organizers | Eventra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="existing-organizers.css">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg"></div>
+
+<header class="header">
+    <h1>Existing Organizers</h1>
+    <button onclick="window.location.href='admin-dashboard.html'">← Back</button>
+</header>
+
+<div class="container">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name or email..."
+        oninput="filterOrganizers()"
+    >
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="organizerTable"></tbody>
+    </table>
+
+</div>
+
+<!-- EDIT MODAL -->
+<div id="editModal" class="modal hidden">
+    <div class="modal-card">
+        <h2>Edit Organizer</h2>
+
+        <input id="editName" placeholder="Name">
+        <input id="editDept" placeholder="Department">
+        <input id="editYear" type="number" min="1" max="5">
+
+        <div class="modal-actions">
+            <button onclick="saveEdit()">Save</button>
+            <button class="secondary" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="existing-organizers.js"></script>
+</body>
+</html>

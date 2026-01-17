@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Organizer | Eventra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="add-organiser.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT BRAND PANEL -->
+    <div class="left-panel">
+        <h1>EVENTRA</h1>
+        <h2>
+            Smart Events.<br>
+            Seamless Management.<br>
+            One Powerful Platform.
+        </h2>
+        <p>
+            The future of college event management starts here.
+        </p>
+    </div>
+
+    <!-- RIGHT FORM PANEL -->
+    <div class="right-panel">
+        <h2>Add Organizer</h2>
+
+        <form id="organizerForm">
+
+            <label for="name">Organizer Name</label>
+            <input id="name" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+
+            <label for="phone">Contact Number</label>
+            <input id="phone" type="text" required>
+
+            <label for="dept">Department</label>
+            <input id="dept" type="text" required>
+
+            <label for="year">Year of Study</label>
+            <input id="year" type="number" min="1" max="5" required>
+
+            <button id="saveBtn" type="submit">Save Organizer</button>
+
+        </form>
+
+        <p id="successMsg" class="success hidden">
+            ✅ Organizer added successfully!
+        </p>
+    </div>
+
+</div>
+
+<!-- small floating tab (bottom-right) to go to existing organizers -->
+<div class="floating-view-btn" onclick="window.location.href='existing-organizers.html'">
+    👥 View Organizers
+</div>
+
+<!-- Module script that connects to Firebase & handles submit -->
+<script type="module" src="add-organiser.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Budget | Eventra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="add-budget.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Add Budget</h1>
+    <button onclick="window.location.href='admin-dashboard.html'">← Back</button>
+</header>
+
+<div class="container">
+
+    <form id="budgetForm" class="card">
+
+        <!-- SELECT ORGANIZER -->
+        <label>Assign to Organizer</label>
+        <select id="organizerSelect" required>
+            <option value="">Loading organizers...</option>
+        </select>
+
+        <label>Total Budget (₹)</label>
+        <input type="number" id="totalBudget" required>
+
+        <label>Sponsor Amount (₹)</label>
+        <input type="number" id="sponsorAmount">
+
+        <label>Remarks</label>
+        <textarea id="description" rows="3"></textarea>
+
+        <button type="submit">Save Budget</button>
+
+        <p id="successMsg" class="success hidden">
+            ✅ Budget assigned successfully!
+        </p>
+    </form>
+
+</div>
+
+<div class="floating-btn" onclick="window.location.href='existing-budgets.html'">
+    📊 View Budgets
+</div>
+
+<script type="module" src="add-budget.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventra | Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .student-grid-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .student-grid-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .student-card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      text-align: center;
+      min-width: 260px;
+    }
+
+    .student-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .student-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .student-card p {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .student-grid-top {
+        grid-template-columns: 1fr;
+      }
+
+      .student-grid-bottom {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- BACKGROUND BLOBS -->
+<div class="bg-blobs">
+  <span class="blob blue"></span>
+  <span class="blob purple"></span>
+</div>
+
+<!-- HEADER -->
+<header class="dashboard-header">
+  <div class="admin-info">
+    <img id="studentAvatar" class="admin-avatar">
+    <div>
+      <h2 id="welcomeText">Welcome</h2>
+      <span class="admin-role">Student</span>
+    </div>
+  </div>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<main class="dashboard">
+
+  <p class="dashboard-sub">
+    Stay updated with events, passes & announcements
+  </p>
+
+  <!-- TOP 3 -->
+  <div class="student-grid-top">
+
+    <div class="student-card" onclick="location.href='student-events.html'">
+      <div class="icon">🎟️</div>
+      <h3>Event Registration</h3>
+      <p>Register for upcoming college events</p>
+    </div>
+
+    <div class="student-card" onclick="location.href='student-pass.html'">
+      <div class="icon">📱</div>
+      <h3>Pass Collection</h3>
+      <p>View & download your event passes</p>
+    </div>
+
+    <div class="student-card" onclick="location.href='student-notices.html'">
+      <div class="icon">📢</div>
+      <h3>Notice Panel</h3>
+      <p>Important announcements from organizers</p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM 2 -->
+  <div class="student-grid-bottom">
+
+    <div class="student-card" onclick="location.href='student-feedback.html'">
+      <div class="icon">📝</div>
+      <h3>Feedback</h3>
+      <p>Share feedback for attended events</p>
+    </div>
+
+    <div class="student-card" onclick="location.href='student-schedule.html'">
+      <div class="icon">📅</div>
+      <h3>Schedule</h3>
+      <p>View event schedules & reminders</p>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+<script>
+  firebase.initializeApp({
+    apiKey: "AIzaSyC0z62X0noy6njzUTOLbzA0tv3D3B5gGQc",
+    authDomain: "eventra-a07f8.firebaseapp.com",
+    projectId: "eventra-a07f8"
+  });
+
+  const auth = firebase.auth();
+
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      window.location.href = "student.html";
+      return;
+    }
+
+    document.getElementById("welcomeText").innerText =
+      `Welcome, ${user.displayName}`;
+
+    document.getElementById("studentAvatar").src =
+      user.photoURL || "https://via.placeholder.com/60";
+  });
+
+  function logout() {
+    auth.signOut().then(() => {
+      window.location.href = "index.html";
+    });
+  }
+</script>
+
+</body>
+</html>

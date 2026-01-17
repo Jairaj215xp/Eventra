@@ -1,0 +1,80 @@
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.schedule-list {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.schedule-card {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.schedule-card h4 {
+  margin-bottom: 4px;
+}
+
+.schedule-card span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* MODAL */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 99;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 420px;
+  padding: 24px;
+  border-radius: 16px;
+  z-index: 100;
+}
+
+.modal label {
+  font-size: 13px;
+  margin-top: 12px;
+  display: block;
+}
+
+.modal input, .modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.hidden { display: none; }

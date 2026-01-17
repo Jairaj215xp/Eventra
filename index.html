@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventra | Event Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= BACKGROUND BLOBS ================= -->
+<div class="bg-blobs">
+    <span class="blob blue"></span>
+    <span class="blob purple"></span>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">Eventra</div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Eventra</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+
+    <!-- LEFT TEXT -->
+    <div class="hero-text">
+        <h1>
+            <span id="typewriter" class="gradient-text"></span><br>
+            Your one stop<br>
+            solution to manage &<br>
+            enjoy the Events.
+        </h1>
+
+        <p>
+            Eventra is a college-focused event management platform
+            designed to simplify planning, execution, and participation.
+        </p>
+    </div>
+
+    <!-- RIGHT ROLE SELECTION -->
+    <div class="role-cards">
+
+        <!-- ADMIN -->
+        <a href="admin.html" style="text-decoration:none;">
+            <div class="role-card admin">
+                <div class="icon">🛡️</div>
+                Admin
+                <small>Manage institutes & organizers</small>
+            </div>
+        </a>
+
+        <!-- ORGANIZER + STUDENT -->
+        <div class="role-row">
+
+            <!-- ORGANIZER -->
+            <a href="organizer.html" style="text-decoration:none;">
+                <div class="role-card organizer">
+                    <div class="icon">📋</div>
+                    Organizer
+                    <small>Create & manage events</small>
+                </div>
+            </a>
+
+            <!-- STUDENT -->
+            <a href="student.html" style="text-decoration:none;">
+                <div class="role-card student">
+                    <div class="icon">🎓</div>
+                    Student
+                    <small>Explore & participate</small>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    © 2026 Eventra. All rights reserved.
+</footer>
+
+<!-- ✅ REQUIRED FOR FIREBASE (ONLY CHANGE) -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

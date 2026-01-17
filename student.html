@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eventra | Student Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND BLOBS -->
+<div class="bg-blobs">
+  <span class="blob blue"></span>
+  <span class="blob purple"></span>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo gradient-text">Eventra</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Eventra</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<!-- ================= STUDENT LOGIN ================= -->
+<section class="admin-layout main-container">
+
+  <!-- LEFT CONTENT -->
+  <div class="admin-left">
+    <h1 class="gradient-text">Student Portal</h1>
+    <p class="admin-tagline">
+      Access your events,<br>
+      schedules & notifications<br>
+      in one place.
+    </p>
+  </div>
+
+  <!-- RIGHT CARD -->
+  <div class="admin-right">
+    <div class="admin-card">
+
+      <h2 class="admin-title">Student Login</h2>
+      <p class="admin-subtitle">
+        Continue using your college Google account
+      </p>
+
+      <button class="google-btn" onclick="studentGoogleLogin()">
+        Continue with Google
+      </button>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= FIREBASE SDKs ================= -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+  firebase.initializeApp({
+    apiKey: "AIzaSyC0z62X0noy6njzUTOLbzA0tv3D3B5gGQc",
+    authDomain: "eventra-a07f8.firebaseapp.com",
+    projectId: "eventra-a07f8",
+  });
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  function studentGoogleLogin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider)
+      .then(async (result) => {
+        const user = result.user;
+
+        await db.collection("students").doc(user.uid).set({
+          uid: user.uid,
+          name: user.displayName,
+          email: user.email,
+          photo: user.photoURL,
+          role: "student",
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+
+        window.location.href = "student-dashboard.html";
+      })
+      .catch(err => alert(err.message));
+  }
+</script>
+
+</body>
+</html>

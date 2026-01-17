@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventra | Organizer Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="organizer-dashboard.css">
+</head>
+<body>
+
+<!-- Background Blobs -->
+<div class="bg-blobs">
+    <span class="blob blue"></span>
+    <span class="blob purple"></span>
+</div>
+
+<!-- HEADER -->
+<header class="dashboard-header">
+    <div class="organizer-info">
+        <img id="organizerAvatar" class="avatar">
+        <div>
+            <h2 id="welcomeText">Welcome</h2>
+            <span class="role">Organizer</span>
+        </div>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="dashboard">
+
+    <p class="dashboard-sub">
+        Plan, manage and analyze your events — all in one place
+    </p>
+
+    <div class="dashboard-cards">
+
+        <div class="dash-card blue" onclick="goTo('organizer-events.html')">
+            <h3>🎉 Events</h3>
+            <p>Create & manage your events</p>
+        </div>
+
+        <div class="dash-card green" onclick="goTo('organizer-finance.html')">
+            <h3>💰 Finance Manager</h3>
+            <p>Track budgets & expenses</p>
+        </div>
+
+        <div class="dash-card purple" onclick="goTo('venue-exploration.html')">
+            <h3>📍 Venue Exploration</h3>
+            <p>Find & manage venues</p>
+        </div>
+
+        <div class="dash-card orange" onclick="goTo('organizer-schedule.html')">
+            <h3>🗓️ Schedule</h3>
+            <p>Event timelines & tasks</p>
+        </div>
+
+        <div class="dash-card teal" onclick="goTo('organizer-feedback.html')">
+            <h3>📝 Feedback</h3>
+            <p>View participant feedback</p>
+        </div>
+
+        <div class="dash-card pink" onclick="goTo('organizer-analytics.html')">
+            <h3>📊 Analytics</h3>
+            <p>Insights & performance</p>
+        </div>
+
+    </div>
+</main>
+
+<script type="module" src="organizer-dashboard.js"></script>
+</body>
+</html>

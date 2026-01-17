@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Venue Exploration | Eventra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="venue-exploration.css">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-blobs">
+  <span class="blob blue"></span>
+  <span class="blob purple"></span>
+</div>
+
+<main class="dashboard">
+
+  <!-- HEADER -->
+  <div class="venue-header">
+    <h1 class="gradient-text">Venue Exploration</h1>
+
+    <div class="venue-controls">
+      <input type="text" id="searchInput" placeholder="Search venue or area">
+      <select id="eventType">
+        <option value="auditorium">Auditorium</option>
+        <option value="conference hall">Conference Hall</option>
+        <option value="stadium">Stadium</option>
+        <option value="banquet hall">Banquet Hall</option>
+        <option value="open ground">Open Ground</option>
+      </select>
+      <button onclick="searchVenues()">Search</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="venue-layout">
+    <div id="map"></div>
+    <div class="venue-list" id="venueList">
+      <p class="muted">Search venues to see results</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- GOOGLE MAPS API -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBftu38B444w9QspvaErYmm1y5TdYRMeww&libraries=places&callback=initMap"
+  async defer>
+</script>
+
+<!-- ✅ YOUR JS (THIS WAS MISSING) -->
+<script src="venue-exploration.js"></script>
+
+</body>
+</html>

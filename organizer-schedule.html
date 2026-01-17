@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eventra | Schedule Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="organizer-schedule.css">
+</head>
+<body>
+
+<!-- BACKGROUND BLOBS -->
+<div class="bg-blobs">
+  <span class="blob blue"></span>
+  <span class="blob purple"></span>
+</div>
+
+<main class="dashboard">
+
+  <!-- HEADER -->
+  <div class="schedule-header">
+    <h1 class="gradient-text">Schedule Manager</h1>
+
+    <!-- ✅ FIXED BUTTON -->
+    <button class="add-schedule-btn" onclick="openScheduleModal()">
+      + Add Schedule
+    </button>
+  </div>
+
+  <!-- SCHEDULE LIST -->
+  <div class="schedule-container" id="scheduleContainer">
+    <p class="muted">No schedules added yet</p>
+  </div>
+
+</main>
+
+<!-- ================= MODAL BACKDROP ================= -->
+<div id="modalBackdrop" class="modal-backdrop hidden"></div>
+
+<!-- ================= SCHEDULE MODAL ================= -->
+<div id="scheduleModal" class="schedule-modal hidden">
+  <h2>Add Schedule</h2>
+
+  <label>Title</label>
+  <input type="text" id="titleInput" placeholder="Eg. Opening Ceremony">
+
+  <label>Date</label>
+  <input type="date" id="dateInput">
+
+  <label>Start Time</label>
+  <input type="time" id="startTimeInput">
+
+  <label>End Time</label>
+  <input type="time" id="endTimeInput">
+
+  <label>Description</label>
+  <textarea id="descInput" placeholder="Details about this schedule"></textarea>
+
+  <div class="modal-actions">
+    <button class="cancel-btn" onclick="closeScheduleModal()">Cancel</button>
+    <button class="save-btn" onclick="saveSchedule()">Save</button>
+  </div>
+</div>
+
+<!-- ✅ JS FILE (IMPORTANT) -->
+<script src="organizer-schedule.js"></script>
+
+</body>
+</html>

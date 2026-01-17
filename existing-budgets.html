@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Existing Budgets | Eventra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="existing-budgets.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Assigned Budgets</h1>
+    <button onclick="window.location.href='admin-dashboard.html'">← Back</button>
+</header>
+
+<div class="container">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by organizer name..."
+        oninput="filterBudgets()"
+    >
+
+    <table>
+        <thead>
+            <tr>
+                <th>Organizer</th>
+                <th>Total Budget (₹)</th>
+                <th>Sponsor (₹)</th>
+                <th>Remarks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="budgetTable"></tbody>
+    </table>
+
+</div>
+
+<!-- EDIT MODAL -->
+<div id="editModal" class="modal hidden">
+    <div class="modal-card">
+        <h2>Edit Budget</h2>
+
+        <label>Total Budget</label>
+        <input id="editTotal" type="number">
+
+        <label>Sponsor Amount</label>
+        <input id="editSponsor" type="number">
+
+        <label>Remarks</label>
+        <textarea id="editRemarks"></textarea>
+
+        <div class="modal-actions">
+            <button onclick="saveEdit()">Save</button>
+            <button class="secondary" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="existing-budgets.js"></script>
+</body>
+</html>

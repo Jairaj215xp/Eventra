@@ -1,0 +1,38 @@
+.passes-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.pass-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.pass-card h3 {
+  margin-bottom: 6px;
+}
+
+.pass-meta {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.qr-box {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.pass-footer {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+  color: #475569;
+  font-weight: 600;
+}

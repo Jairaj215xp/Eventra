@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Event Passes | Eventra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="student-pass.css">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-blobs">
+  <span class="blob blue"></span>
+  <span class="blob purple"></span>
+</div>
+
+<main class="dashboard">
+
+  <h1 class="gradient-text">🎟 My Event Passes</h1>
+  <p class="muted">Show this QR code at the event entry</p>
+
+  <div id="passesContainer" class="passes-grid">
+    <p class="muted">Loading your passes...</p>
+  </div>
+
+</main>
+
+<!-- QR LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<script type="module" src="student-pass.js"></script>
+</body>
+</html>
